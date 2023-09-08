@@ -1,53 +1,58 @@
-(function (React) {
-    'use strict';
-
-    function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
-
-    var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
-
-    (function() {
-        const env = {};
-        try {
-            if (process) {
-                process.env = Object.assign({}, process.env);
-                Object.assign(process.env, env);
-                return;
-            }
-        } catch (e) {} // avoid ReferenceError: process is not defined
-        globalThis.process = { env:env };
-    })();
-
-    /*! *****************************************************************************
-    Copyright (c) Microsoft Corporation.
-
-    Permission to use, copy, modify, and/or distribute this software for any
-    purpose with or without fee is hereby granted.
-
-    THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
-    REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-    AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
-    INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-    LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-    OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-    PERFORMANCE OF THIS SOFTWARE.
-    ***************************************************************************** */
-    /* global Reflect, Promise */
-
-    var extendStatics = function(d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-
-    function __extends(d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+require => (() => {
+  var __create = Object.create;
+  var __defProp = Object.defineProperty;
+  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+  var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __getProtoOf = Object.getPrototypeOf;
+  var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __require = (x => typeof require !== "undefined" ? require : typeof Proxy !== "undefined" ? new Proxy(x, {
+    get: (a, b) => (typeof require !== "undefined" ? require : a)[b]
+  }) : x)(function (x) {
+    if (typeof require !== "undefined") return require.apply(this, arguments);
+    throw new Error('Dynamic require of "' + x + '" is not supported');
+  });
+  var __export = (target, all) => {
+    for (var name in all) __defProp(target, name, {
+      get: all[name],
+      enumerable: true
+    });
+  };
+  var __copyProps = (to, from, except, desc) => {
+    if (from && typeof from === "object" || typeof from === "function") {
+      for (let key of __getOwnPropNames(from)) if (!__hasOwnProp.call(to, key) && key !== except) __defProp(to, key, {
+        get: () => from[key],
+        enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable
+      });
     }
-
-    var Repeat=function(_super){__extends(Repeat,_super);function Repeat(){return _super!==null&&_super.apply(this,arguments)||this}Repeat.prototype.render=function(){return React__default['default'].createElement("div",null,"This is spawned from the repeat package")};return Repeat}(React__default['default'].PureComponent);var index = {toSpawn:function(){return true},body:function(debuggerContext){return React__default['default'].createElement(Repeat,{debuggerContext:debuggerContext})},label:"Repeat Test Tab",iconName:"build"};
-
-    return index;
-
-}(React));
+    return to;
+  };
+  var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", {
+    value: mod,
+    enumerable: true
+  }) : target, mod));
+  var __toCommonJS = mod => __copyProps(__defProp({}, "__esModule", {
+    value: true
+  }), mod);
+  var Repeat_exports = {};
+  __export(Repeat_exports, {
+    default: () => Repeat_default
+  });
+  var import_react = __toESM(__require("react"), 1);
+  var import_jsx_runtime = __require("react/jsx-runtime");
+  var Repeat = class extends import_react.default.PureComponent {
+    render() {
+      return (0, import_jsx_runtime.jsx)("div", {
+        children: "This is spawned from the repeat package"
+      });
+    }
+  };
+  var Repeat_default = {
+    toSpawn: () => true,
+    body: debuggerContext => (0, import_jsx_runtime.jsx)(Repeat, {
+      debuggerContext
+    }),
+    label: "Repeat Test Tab",
+    iconName: "build"
+  };
+  return __toCommonJS(Repeat_exports);
+})()["default"]
