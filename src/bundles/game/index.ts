@@ -1,6 +1,4 @@
-import gameFuncs from './functions';
-
-export const {
+export {
   add,
   add_listener,
   add_keyboard_listener,
@@ -42,4 +40,5 @@ export const {
   set_position,
   set_rotation,
   set_scale,
-} = gameFuncs();
+  run_scene,
+} from './functions';
